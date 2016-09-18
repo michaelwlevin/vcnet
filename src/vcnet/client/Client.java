@@ -1,6 +1,6 @@
 package vcnet.client;
 
-import vcnet.net.ClientGUI;
+import vcnet.gui.ClientGUI;
 import graphicutils.GraphicUtils;
 import graphicutils.MessageBox;
 import java.awt.*;
@@ -9,7 +9,6 @@ import java.net.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-import gui.*;
 import graphicutils.*;
 import vcnet.gui.VCPanel;
 import vcnet.mech.Card;
@@ -234,6 +233,8 @@ public class Client extends MessageHandler
 		});
 
 		name.requestFocus();
+                
+                frame.setLocationRelativeTo(null);
 
 		frame.setVisible(true);
 	}

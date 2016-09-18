@@ -46,6 +46,8 @@ public class MessageBox extends JFrame
 				close();
 			}
 		});
+                
+                setLocationRelativeTo(null);
 
 		setVisible(visible);
 	}

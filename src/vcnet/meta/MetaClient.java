@@ -4,7 +4,6 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import vcnet.net.*;
-import bot.*;
 import vcnet.bot.BotClient;
 import vcnet.bot.DefaultBotClient;
 import vcnet.gui.ScoreDisplay;

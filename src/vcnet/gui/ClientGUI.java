@@ -1,4 +1,4 @@
-package vcnet.net;
+package vcnet.gui;
 
 import graphicutils.GraphicUtils;
 import graphicutils.MessageBox;
@@ -8,11 +8,17 @@ import javax.swing.*;
 import java.util.Arrays;
 import java.awt.image.*;
 import graphicutils.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Scanner;
 import vcnet.mech.Card;
 import vcnet.mech.RuleList;
 import vcnet.net.ChatMessage;
 import vcnet.client.Client;
 import vcnet.gui.VCPanel;
+import vcnet.net.ChatMessage;
 
 public class ClientGUI extends JFrame
 {
@@ -103,25 +109,61 @@ public class ClientGUI extends JFrame
 		JMenu m2=new JMenu("Suit symbols");
 		
 		
-		JMenuItem symbols=new JMenuItem("Use symbols");
-		symbols.addActionListener(new ActionListener()
+		final JMenuItem symbols1=new JMenuItem("Use symbols");
+                final JMenuItem symbols2=new JMenuItem("Use names");
+                
+		symbols1.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
 				Card.setUseSymbols(true);
+                                symbols1.setEnabled(false);
+                                symbols2.setEnabled(true);
+                                
+                                try
+                                {
+                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options.dat")));
+                                    fileout.println(1);
+                                    fileout.close();
+                                }
+                                catch(IOException ex){}
 			}
 		});
-		m2.add(symbols);
-		symbols=new JMenuItem("Use names");
-		symbols.addActionListener(new ActionListener()
+		m2.add(symbols1);
+		
+		symbols2.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
 				Card.setUseSymbols(false);
+                                symbols2.setEnabled(false);
+                                symbols1.setEnabled(true);
+                                
+                                try
+                                {
+                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options.dat")));
+                                    fileout.println(0);
+                                    fileout.close();
+                                }
+                                catch(IOException ex){}
 			}
 		});
-		m2.add(symbols);
+		m2.add(symbols2);
+                
+                boolean useSymb = false;
+                try
+                {
+                    Scanner filein = new Scanner(new File("options.dat"));
+                    useSymb = filein.nextInt() == 1;
+                    filein.close();
+                }
+                catch(IOException ex){}
 		
+                Card.setUseSymbols(useSymb);
+                symbols1.setEnabled(useSymb);
+                symbols2.setEnabled(!useSymb);
+                
+                
 		m.add(m2);
 		menu.add(m);
 		
@@ -131,6 +173,8 @@ public class ClientGUI extends JFrame
 		add(p);
 		pack();
 		setResizable(false);
+                
+                setLocationRelativeTo(null);
 
 		Timer t=new Timer(100, new ActionListener()
 		{

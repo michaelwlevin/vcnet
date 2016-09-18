@@ -106,6 +106,8 @@ public class SinglePlayerVC
 				System.exit(1);
 			}
 		});
+                
+                frame.setLocationRelativeTo(null);
 		
 		frame.setVisible(true);
 		
