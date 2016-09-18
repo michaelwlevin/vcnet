@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fullpage}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage{tocloft}
+\usepackage{cite}
+\usepackage{verbatim}
+\usepackage{courier}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+
+
+\newcommand{\heart}{$\heartsuit$\,}
+\renewcommand{\diamond}{$\diamondsuit$\,}
+\newcommand{\spade}{$\spadesuit$\,}
+\newcommand{\club}{$\clubsuit$\,}
+
+\begin{document}
+	
+	Rules from \href{https://www.pagat.com/climbing/thirteen.html}{\texttt{https://www.pagat.com/climbing/thirteen.html}} with some modifications.
+
+\section{Introduction}
+
+Tien Len can be considered the national card game of Vietnam; the name of the game, which should properly be spelled Ti\'{\^{e}}n L\^{e}n, means Go Forward. The main description on this page is based on information from Jona Baily; Kenneth Lu and Justus Pang have contributed slightly different versions. Probably as a result of the Vietnam war, Tien Len has spread to some parts of the USA, where it is sometimes called Viet Cong or just VC; Kelly Aman has contributed one version of this. Chris Hovanic learned another version from Chris Molinaro (also in the USA) and they call it Thirteen.
+
+\begin{itemize}
+\item Tien Len is a climbing game (a bit like Zheng Shangyou or President), in which the aim is to get rid of your cards as soon as possible by beating combinations of cards played by the other players.
+Players and Cards
+
+\item The game is for four players. A standard 52 card deck is used; there are no Jokers and no wild cards. It is possible for two or three to play. It can also be played by more than four players, using two 52 card packs shuffled together.
+
+\item The game is normally dealt and played clockwise, but can be played anticlockwise instead if the players agree in advance to do so.
+
+\item The ranking of the cards is: Two (highest), Ace, King, Queen, Jack, Ten, Nine, Eight, Seven, Six, Five, Four, Three (lowest).
+
+\item Within each rank there is also an order of suits: \heart (highest), \diamond, \club, \spade (lowest).
+
+\item So the 3\spade is the lowest card in the pack, and the 2\heart is the highest. Rank is more important than suit, so for example the 8\spade beats the 7\heart.
+\end{itemize}
+
+\section{The deal}
+
+
+For the first game, the dealer is chosen at random; subsequently the loser of each game has to deal the next. When there are four players, 13 cards are dealt to each player.
+
+If there are fewer than four players, 13 cards are still dealt to each player, and there will be some cards left undealt - these are not used in the game. An alternative with three players is, by prior agreement, to deal 17 cards each. When there are only two players, only 13 cards each should be dealt - if all the cards were dealt the players would be able to work out each other's hands, which would spoil the game. When there are more than four players, you can agree in advance either to deal 13 cards each from the double deck, or deal as many cards as possible equally to the players.
+
+
+\section{The play}
+
+The player with the 3\spade begins play. If no one has the 3\spade (in the three or two player game) whoever holds the lowest card begins. The player must begin by playing this lowest card, either on its own or as part of a combination.
+
+Each player in turn must now either beat the previously played card or combination, by playing a card or combination that beats it, or pass and not play any cards. The played card(s) are placed in a heap face up in the centre of the table. The play goes around the table as many times as necessary until someone plays a card or combination that no one else beats. When this happens, all the played cards are set aside, and the person whose play was unbeaten starts again by playing any legal card or combination face up to the centre of the table.
+
+If you pass you are locked out of the play until someone makes a play that no one beats. Only when the cards are set aside and a new card or combination is led are you entitled to play again.
+Example (with three players): the player to your right plays a single three, you hold an ace but decide to pass, the player to your left plays a nine and the player to right plays a king. You cannot now beat the king with your ace, because you have already passed. If the third player passes too, and your right hand opponent now leads a queen, you can now play your ace if you want to.
+
+The legal plays in the game are as follows:
+
+\begin{itemize}
+\item \textbf{Single card}
+    The lowest single card is the 3\spade and the highest is the 2\heart. 
+\item \textbf{Pair}
+    Two cards of the same rank --- such as 7\club--7\diamond or Q\diamond--Q\spade. 
+\item \textbf{Triple}
+    Three cards of the same rank --- such as diamond5-heart5-club5 
+\item \textbf{Break}
+    Four cards of the same rank --- such as 9\heart-9\diamond-9\club-9\spade. 
+\item \textbf{Sequence}
+    Three or more cards of consecutive rank (the suits can be mixed) --- such as 4\diamond--5\spade--6\heart or J\diamond--Q\heart--K\heart--A\club--2\diamond. Sequences cannot "turn the corner" between two and three - A--2--3 is not a valid sequence because 2 is high and 3 is low. 
+   
+\item \textbf{Lock}
+ A sequence of the same suit, for example 4\diamond--5\diamond--6\diamond. 
+ 
+\item \textbf{Bomb}
+    Three or more pairs of consecutive rank - such as 3--3--4--4--5--5 or 6--6--7--7--8--8--9--9. 
+\end{itemize}
+
+In general, a combination can only be beaten by a higher combination of the same type and same number of cards. So if a single card is led, only single cards can be played; if a pair is led only pairs can be played; a three card sequence can only be beaten by a higher three card sequence; and so on. You cannot for example beat a pair with a triple, or a four card sequence with a five card sequence.
+
+To decide which of two combinations of the same type is higher you just look at the highest card in the combination. For example 7\heart--7\spade beats 7\diamond--7\club because \heart beats \diamond. In the same way 8\spade--9\spade--10\diamond beats 8\heart--9\heart--10\club because it is the highest cards (the tens) that are compared.
+
+There are just five exceptions to the rule that a combination can only be beaten by a combination of the same type:
+
+\begin{enumerate}
+    \item A four of a kind can beat any single two (but not any other single card, such as an ace or king). A four of a kind can be beaten by a higher four of a kind. In some variations a break can beat any other play (except a higher break).
+    
+    \item A bomb of three pairs (such as 7--7--8--8--9--9) can beat any single two (but not any other single card). A sequence of three pairs can be beaten by a higher sequence of three pairs.
+    
+    \item A bomb of four pairs (such as 5--5--6--6--7--7--8--8) can beat a pair of twos (but not any other pair). A sequence of four pairs can be beaten by a higher sequence of four pairs.
+    
+    \item A bomb of five pairs (such as 8--8--9--9--10--10--J--J--Q--Q) can beat a set of three twos (but not any other three of a kind). A sequence of five pairs can be beaten by a higher sequence of five pairs. 
+    
+    \item A lock can be played on a sequence, but non-lock sequences cannot be played on locks.
+\end{enumerate}
+
+
+\section{End of play}
+
+As players run out of cards they drop out of the play. If the player whose turn it is to play has no cards left, the turn passes to the next player in rotation. The play ends when only one player has cards left. 
+
+
+\end{document}

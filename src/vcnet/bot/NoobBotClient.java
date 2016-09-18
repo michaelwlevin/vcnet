@@ -25,7 +25,7 @@ public class NoobBotClient extends BotClient
 		
 		try
 		{
-			Scanner file=new Scanner(new File("ConnectTo.dat"));
+			Scanner file=new Scanner(new File("options/ConnectTo.dat"));
 			
 			ip.setText(file.nextLine().trim());
 			port.setText(file.nextLine().trim());
@@ -62,7 +62,7 @@ public class NoobBotClient extends BotClient
 					
 					try
 					{
-						PrintWriter fileout=new PrintWriter(new File("ConnectTo.dat"));
+						PrintWriter fileout=new PrintWriter(new File("options/ConnectTo.dat"));
 						fileout.println(ip.getText().trim());
 						fileout.println(port.getText().trim());
 						fileout.close();

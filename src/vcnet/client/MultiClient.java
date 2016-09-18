@@ -35,7 +35,7 @@ public class MultiClient extends MessageHandler
 
 		try
 		{
-			Scanner file=new Scanner(new File("ConnectTo.dat"));
+			Scanner file=new Scanner(new File("options/ConnectTo.dat"));
 
 			ip.setText(file.nextLine().trim());
 			port.setText(file.nextLine().trim());
@@ -72,7 +72,7 @@ public class MultiClient extends MessageHandler
 
 					try
 					{
-						PrintWriter fileout=new PrintWriter(new File("ConnectTo.dat"));
+						PrintWriter fileout=new PrintWriter(new File("options/ConnectTo.dat"));
 						fileout.println(ip.getText().trim());
 						fileout.println(port.getText().trim());
 						fileout.close();
@@ -340,7 +340,7 @@ public class MultiClient extends MessageHandler
 
 		try
 		{
-			Scanner file=new Scanner(new File("Rules.dat"));
+			Scanner file=new Scanner(new File("options/Rules.dat"));
 			
 			for(byte x=0; x<boxes.length; x++)
 			{
@@ -393,7 +393,7 @@ public class MultiClient extends MessageHandler
 
 				try
 				{
-					PrintWriter fileout=new PrintWriter(new File("Rules.dat"));
+					PrintWriter fileout=new PrintWriter(new File("options/Rules.dat"));
 					
 					for(JCheckBox b:boxes)
 					{
@@ -452,7 +452,7 @@ public class MultiClient extends MessageHandler
 
 		try
 		{
-			Scanner file=new Scanner(new File("Name.dat"));
+			Scanner file=new Scanner(new File("options/Name.dat"));
 
 			name.setText(file.nextLine().trim());
 		}

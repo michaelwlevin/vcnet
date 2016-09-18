@@ -36,7 +36,7 @@ public class MultiServer implements Runnable
 
 		try
 		{
-			Scanner file=new Scanner(new File("Port.dat"));
+			Scanner file=new Scanner(new File("options/Port.dat"));
 			port.setText(file.nextLine().trim());
 
 		}
@@ -61,7 +61,7 @@ public class MultiServer implements Runnable
 
 					try
 					{
-						PrintWriter fileout=new PrintWriter(new File("port.dat"));
+						PrintWriter fileout=new PrintWriter(new File("options/Port.dat"));
 						fileout.println(port.getText().trim());
 
 						fileout.close();

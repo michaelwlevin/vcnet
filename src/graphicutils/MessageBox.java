@@ -3,6 +3,7 @@ package graphicutils;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import vcnet.gui.VCIcon;
 
 public class MessageBox extends JFrame
 {
@@ -13,6 +14,7 @@ public class MessageBox extends JFrame
 	}
 	public MessageBox(String title, String msg, boolean visible){
 		super(title);
+                setIconImage(VCIcon.getIcon());
 
 		JButton close=new JButton("OK");
 

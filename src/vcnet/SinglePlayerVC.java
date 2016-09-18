@@ -13,6 +13,7 @@ import vcnet.bot.BotClient;
 import vcnet.bot.DefaultBotClient;
 import vcnet.bot.NoobBotClient;
 import vcnet.client.Client;
+import vcnet.gui.VCIcon;
 import vcnet.server.Server;
 
 public class SinglePlayerVC
@@ -39,10 +40,11 @@ public class SinglePlayerVC
 		boxes[2]=new JCheckBox("Ignore locks");
 		boxes[3]=new JCheckBox("Breaks affect only 2s");
 		boxes[4]=new JCheckBox("BotPlayer delay");
+                
 		
 		try
 		{
-			Scanner file=new Scanner(new File("Rules.dat"));
+			Scanner file=new Scanner(new File("options/Rules.dat"));
 			for(byte x=0; x<boxes.length; x++)
 			{
 				boxes[x].setSelected(file.nextLine().trim().equals("1"));
@@ -78,7 +80,7 @@ public class SinglePlayerVC
 					
 				try
 				{
-					PrintWriter fileout=new PrintWriter(new File("Rules.dat"));
+					PrintWriter fileout=new PrintWriter(new File("options/Rules.dat"));
 					for(JCheckBox b:boxes)
 					{
 						fileout.println(b.isSelected()?"1":"0");
@@ -108,6 +110,7 @@ public class SinglePlayerVC
 		});
                 
                 frame.setLocationRelativeTo(null);
+                frame.setIconImage(VCIcon.getIcon());
 		
 		frame.setVisible(true);
 		

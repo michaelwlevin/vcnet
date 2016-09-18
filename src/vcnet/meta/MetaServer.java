@@ -59,7 +59,7 @@ public class MetaServer implements Runnable
 
 		try
 		{
-			Scanner file=new Scanner(new File("Port.dat"));
+			Scanner file=new Scanner(new File("options/Port.dat"));
 			port.setText(file.nextLine().trim());
 			for(byte x=0; x<boxes.length; x++)
 			{
@@ -137,7 +137,7 @@ public class MetaServer implements Runnable
 
 					try
 					{
-						PrintWriter fileout=new PrintWriter(new File("Port.dat"));
+						PrintWriter fileout=new PrintWriter(new File("options/Port.dat"));
 						fileout.println(port.getText().trim());
 						for(JCheckBox b:boxes)
 						{

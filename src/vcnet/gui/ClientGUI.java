@@ -33,6 +33,7 @@ public class ClientGUI extends JFrame
 
 	public ClientGUI(Client c)
 	{
+            setIconImage(VCIcon.getIcon());
 		client=c;
 
 		vcPanel=new VCPanel(c);
@@ -122,7 +123,7 @@ public class ClientGUI extends JFrame
                                 
                                 try
                                 {
-                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options.dat")));
+                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options/options.dat")));
                                     fileout.println(1);
                                     fileout.close();
                                 }
@@ -141,7 +142,7 @@ public class ClientGUI extends JFrame
                                 
                                 try
                                 {
-                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options.dat")));
+                                    PrintStream fileout = new PrintStream(new FileOutputStream(new File("options/options.dat")));
                                     fileout.println(0);
                                     fileout.close();
                                 }
@@ -153,15 +154,15 @@ public class ClientGUI extends JFrame
                 boolean useSymb = false;
                 try
                 {
-                    Scanner filein = new Scanner(new File("options.dat"));
+                    Scanner filein = new Scanner(new File("options/options.dat"));
                     useSymb = filein.nextInt() == 1;
                     filein.close();
                 }
                 catch(IOException ex){}
 		
                 Card.setUseSymbols(useSymb);
-                symbols1.setEnabled(useSymb);
-                symbols2.setEnabled(!useSymb);
+                symbols1.setEnabled(!useSymb);
+                symbols2.setEnabled(useSymb);
                 
                 
 		m.add(m2);

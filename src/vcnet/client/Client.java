@@ -10,6 +10,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import graphicutils.*;
+import vcnet.gui.VCIcon;
 import vcnet.gui.VCPanel;
 import vcnet.mech.Card;
 import vcnet.mech.RuleList;
@@ -53,7 +54,7 @@ public class Client extends MessageHandler
 
 		try
 		{
-			Scanner file=new Scanner(new File("ConnectTo.dat"));
+			Scanner file=new Scanner(new File("options/ConnectTo.dat"));
 
 			ip.setText(file.nextLine().trim());
 			port.setText(file.nextLine().trim());
@@ -122,6 +123,8 @@ public class Client extends MessageHandler
 		frame.add(p);
 		frame.pack();
 		frame.setResizable(false);
+                
+                frame.setIconImage(VCIcon.getIcon());
 
 		frame.addWindowListener(new WindowAdapter()
 		{
@@ -171,7 +174,7 @@ public class Client extends MessageHandler
 
 		try
 		{
-			Scanner file=new Scanner(new File("Name.dat"));
+			Scanner file=new Scanner(new File("options/Name.dat"));
 
 			name.setText(file.nextLine().trim());
 		}
@@ -223,6 +226,8 @@ public class Client extends MessageHandler
 		frame.add(p);
 		frame.pack();
 		frame.setResizable(false);
+                
+                frame.setIconImage(VCIcon.getIcon());
 
 		frame.addWindowListener(new WindowAdapter()
 		{
@@ -266,7 +271,7 @@ public class Client extends MessageHandler
 
 			try
 			{
-				PrintWriter fileout=new PrintWriter(new File("Name.dat"));
+				PrintWriter fileout=new PrintWriter(new File("options/Name.dat"));
 				fileout.println(name);
 				fileout.close();
 			}
@@ -375,11 +380,11 @@ public class Client extends MessageHandler
 		{
 			vcPanel.startTurn();
 
-			addGameMsg("Your turn.");
+			//addGameMsg("Your turn.");
 		}
 		else
 		{
-			addGameMsg(msg.getPlayer()+"'s turn.");
+			//addGameMsg(msg.getPlayer()+"'s turn.");
 		}
 	}
 	public void handleChat(ChatMessage msg)

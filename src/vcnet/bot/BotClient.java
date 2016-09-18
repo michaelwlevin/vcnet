@@ -196,7 +196,10 @@ public abstract class BotClient extends MessageHandler
 			{
 				Thread.sleep(3000);
 			}
-			catch(InterruptedException e){}
+			catch(InterruptedException e)
+                        {
+                            e.printStackTrace(System.err);
+                        }
 		}
 	}
 	public void playCards(CardPlay cards)
